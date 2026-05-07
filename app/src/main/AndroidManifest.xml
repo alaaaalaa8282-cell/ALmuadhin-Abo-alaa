@@ -28,6 +28,9 @@
     <!-- Speech Recognition for Noor Screen -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -82,7 +85,9 @@
    <receiver
     android:name=".alarm.SalahReceiver"
     android:exported="false" />
-  <service android:name=".alarm.SalahSoundService" />
+  <service 
+    android:name=".alarm.SalahSoundService"
+    android:foregroundServiceType="mediaPlayback" />
  <service android:name=".alarm.ZekrService" />
 <receiver android:name=".alarm.ZekrReceiver" android:exported="false" />
     </application>
